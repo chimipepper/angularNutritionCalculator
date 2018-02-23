@@ -1,7 +1,18 @@
 #header {
   text-align: center;
+  font-size:35px;
   padding: 20px;
   background-color: pink;
+  color:#616161;
+}
+#header h1 {
+  font-size:60px;
+  font-family: 'Lobster', cursive;
+  line-height: 0.2;
+}
+#header h2 {
+  font-size:20px;
+  font-family: 'Raleway', sans-serif;
 }
 
 #home {
@@ -9,13 +20,18 @@
   background-color: lightblue;
 }
 
-#itemOptions {
+/* #itemOptions {
   border-style: solid;
   border-color: green;
+} */
+#itemOptions {
+  margin-top:20px;
 }
-
+#itemOptions i, input {
+  float:right;
+  margin:10px;
+}
 #itemOptions .panel-heading {
-  cursor: pointer;
   /*background-color:lightgray;*/
   -moz-box-shadow:    inset 0 0 10px #000000;
   -webkit-box-shadow: inset 0 0 10px #000000;
@@ -30,15 +46,20 @@
 #itemOptions i:hover {
   cursor: pointer;
 }
+#itemOptions .itemQty {
+  width:20px;
+  text-align:center;
+}
 
 /*========================================NUTRITION FACT SHEET=========================================================*/
 
 #factSheet {
-  border-style: solid;
-  border-color: red;
+  /* border-style: solid;
+  border-color: red; */
   line-height: 1.4;
   margin: 0;
 }
+
 
 /*Entire nutrition fact div*/
 .performance-facts {
@@ -172,7 +193,7 @@
       border-bottom: 1px solid black;
     }
   }
-}
+
   td {
         :last-child {
       text-align: left;
@@ -184,6 +205,23 @@
     padding: 0;
     border-bottom: 1px solid black;
   }
+}
+
+
+.performance-facts__table--footer {
+  background-color: pink;
+  width:100%;
+  text-align:center;
+}
+.performance-facts__table--footer td i{
+  /* background-color: pink; */
+  width:100%;
+  font-size:50px;
+  text-align:center;
+}
+.performance-facts__table--footer td {
+  text-align:center;
+  border-style: none;
 }
 
 

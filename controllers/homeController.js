@@ -1,7 +1,8 @@
 calculator.controller('homeController', ['$scope', function($scope) {
 
-    $scope.addItem= function(itemCalories, itemFatCalories, itemFatGrams, itemSatFat, itemTransFat, itemCholesterol, itemSodium, itemCarbs, itemFiber, itemSugar, itemProtein,itemVitA, itemVitC, itemCalcium, itemIron) {
+    $scope.addItem= function(itemCalories, itemFatCalories, itemFatGrams, itemSatFat, itemTransFat, itemCholesterol, itemSodium, itemCarbs, itemFiber, itemSugar, itemProtein,itemVitA, itemVitC, itemCalcium, itemIron, qtyNumber) {
 //find calorie value of the flavor seelcted
+      $scope.qtyNumber = $scope.qtyNumber + 1;
       $scope.calorieTotal= $scope.calorieTotal + itemCalories;
       $scope.fatCalTotal = $scope.fatCalTotal + itemFatCalories;
       $scope.totalFatGrams = $scope.totalFatGrams + itemFatGrams;
@@ -25,8 +26,35 @@ calculator.controller('homeController', ['$scope', function($scope) {
       $scope.totalCalcium = (itemCalcium/1100)*100;
       $scope.totalIron = (itemIron/14)*100;
     };
+    $scope.removeItem= function(itemCalories, itemFatCalories, itemFatGrams, itemSatFat, itemTransFat, itemCholesterol, itemSodium, itemCarbs, itemFiber, itemSugar, itemProtein,itemVitA, itemVitC, itemCalcium, itemIron) {
+      $scope.calorieTotal= $scope.calorieTotal - itemCalories;
+      $scope.fatCalTotal = $scope.fatCalTotal - itemFatCalories;
+      $scope.totalFatGrams = $scope.totalFatGrams - itemFatGrams;
+      $scope.totalSatFat = $scope.totalSatFat - itemSatFat;
+      $scope.totalTransFat = $scope.totalTransFat - itemTransFat;
+      $scope.totalCholesterol = $scope.totalCholesterol - itemCholesterol;
+      $scope.totalSodium = $scope.totalSodium - itemSodium;
+      $scope.totalCarbs = $scope.totalCarbs - itemCarbs;
+      $scope.totalFiber = $scope.totalFiber - itemFiber;
+      $scope.totalSugar = $scope.totalSugar - itemSugar;
+      $scope.totalProtein = $scope.totalProtein - itemProtein;
+      $scope.totalFatDV = ($scope.totalFatGrams/65)*100;
+      $scope.totalSatFatDV = ($scope.totalSatFat/20)*100;
+      $scope.totalCholesterolDV = ($scope.totalCholesterol/300)*100;
+      $scope.totalSodiumDV = ($scope.totalSodium/2400)*100;
+      $scope.totalCarbDV = ($scope.totalCarbs/300)*100;
+      $scope.totalDietFiberDV = ($scope.totalFiber/25)*100;
+      $scope.itemNumber= $scope.itemNumber- 1;
+      $scope.totalVitaminA = (itemVitA/1000)*100;
+      $scope.totalVitaminC = (itemVitC/60)*100;
+      $scope.totalCalcium = (itemCalcium/1100)*100;
+      $scope.totalIron = (itemIron/14)*100;
+      $scope.qtyNumber = $scope.qtyNumber + 1;
+    }
+
 /*NUMBER OF ITEMS ADDED*/
   $scope.itemNumber=0;
+  $scope.qtyNumber=0;
 
 /*TOTAL NUTRITION*/
     $scope.calorieTotal=0;

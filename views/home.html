@@ -1,17 +1,17 @@
 <div id="home" class="container">
   <div class="row">
     <div id="itemOptions" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-
       <div class="panel-group">
         <div class="panel panel-default">
-          <div class="panel-heading" data-toggle="collapse" data-target="#flavors">
+          <div class="panel-heading"   data-target="#flavors">
             <h4 class="panel-title">
-         <div data-toggle="collapse" data-target="#flavors">Flavors</div>
+         <div  data-target="#flavors">Flavors</div>
             </h4>
           </div>
-          <div id="flavors" class="panel-collapse collapse">
+          <!-- <div id="flavors" class="panel-collapse collapse"> -->
+          <div id="flavors">
             <ul class="list-group">
-              <li class="list-group-item" ng-repeat="flavor in flavors"><i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(flavor.calories, flavor.fatCalories, flavor.fatGrams, flavor.satFatGrams, flavor.transFatGrams, flavor.cholesterolMg, flavor.sodiumMg, flavor.carbTotal, flavor.fiberGrams, flavor.sugarGrams, flavor.proteinGrams,flavor.vitaminA, flavor.vitaminC, flavor.calcium, flavor.iron)"></i> {{flavor.name}}</li>
+              <li class="list-group-item" ng-repeat="flavor in flavors"> {{flavor.name}} <i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(flavor.calories, flavor.fatCalories, flavor.fatGrams, flavor.satFatGrams, flavor.transFatGrams, flavor.cholesterolMg, flavor.sodiumMg, flavor.carbTotal, flavor.fiberGrams, flavor.sugarGrams, flavor.proteinGrams,flavor.vitaminA, flavor.vitaminC, flavor.calcium, flavor.iron)"></i></span> <input type="text" class="itemQty" value="0"> <i class="fa fa-minus-circle" aria-hidden="true" ng-click="removeItem(flavor.calories, flavor.fatCalories, flavor.fatGrams, flavor.satFatGrams, flavor.transFatGrams, flavor.cholesterolMg, flavor.sodiumMg, flavor.carbTotal, flavor.fiberGrams, flavor.sugarGrams, flavor.proteinGrams,flavor.vitaminA, flavor.vitaminC, flavor.calcium, flavor.iron)"></i></li>
             </ul>
           </div>
         </div>
@@ -19,14 +19,14 @@
 
       <div class="panel-group">
         <div class="panel panel-default">
-          <div class="panel-heading"data-toggle="collapse" data-target="#toppings">
+          <div class="panel-heading"  data-target="#toppings">
             <h4 class="panel-title">
-          <div data-toggle="collapse" data-target="#toppings">Toppings</div>
+          <div data-target="#toppings">Toppings</div>
         </h4>
           </div>
-          <div id="toppings" class="panel-collapse collapse">
+          <div id="toppings">
             <ul class="list-group">
-              <li class="list-group-item" ng-repeat="topping in toppings"><i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(topping.calories, topping.fatCalories, topping.fatGrams, topping.satFatGrams, topping.transFatGrams, topping.cholesterolMg, topping.sodiumMg, topping.carbTotal, topping.fiberGrams, topping.sugarGrams, topping.proteinGrams,topping.vitaminA, topping.vitaminC, topping.calcium, topping.iron)"></i> {{topping.name}}</li>
+              <li class="list-group-item" ng-repeat="topping in toppings"> {{topping.name}} <i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(topping.calories, topping.fatCalories, topping.fatGrams, topping.satFatGrams, topping.transFatGrams, topping.cholesterolMg, topping.sodiumMg, topping.carbTotal, topping.fiberGrams, topping.sugarGrams, topping.proteinGrams,topping.vitaminA, topping.vitaminC, topping.calcium, topping.iron)"> </i> <input type="text" class="itemQty" value="0">  <i class="fa fa-minus-circle" aria-hidden="true" ng-click="removeItem(topping.calories, topping.fatCalories, topping.fatGrams, topping.satFatGrams, topping.transFatGrams, topping.cholesterolMg, topping.sodiumMg, topping.carbTotal, topping.fiberGrams, topping.sugarGrams, topping.proteinGrams,topping.vitaminA, topping.vitaminC, topping.calcium, topping.iron)"> </i></li>
             </ul>
           </div>
         </div>
@@ -34,15 +34,15 @@
 
       <div class="panel-group">
         <div class="panel panel-default">
-          <div class="panel-heading" data-toggle="collapse" data-target="#cone">
+          <div class="panel-heading"  data-target="#cone">
             <h4 class="panel-title">
-         <div data-toggle="collapse" data-target="#cone">Cones</div>
+         <div  data-target="#cone">Cones</div>
        </h4>
           </div>
-          <div id="cone" class="panel-collapse collapse">
+          <div id="cone" >
             <ul class="list-group">
               <!-- different sizes -->
-              <li class="list-group-item" ng-repeat="cone in cones"><i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(cone.calories, cone.fatCalories, cone.fatGrams, cone.satFatGrams, cone.transFatGrams, cone.cholesterolMg, cone.sodiumMg, cone.carbTotal, cone.fiberGrams, cone.sugarGrams, cone.proteinGrams,cone.vitaminA, cone.vitaminC, cone.calcium, cone.iron)"></i> {{cone.name}}</li>
+              <li class="list-group-item" ng-repeat="cone in cones"> {{cone.name}} <i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(cone.calories, cone.fatCalories, cone.fatGrams, cone.satFatGrams, cone.transFatGrams, cone.cholesterolMg, cone.sodiumMg, cone.carbTotal, cone.fiberGrams, cone.sugarGrams, cone.proteinGrams,cone.vitaminA, cone.vitaminC, cone.calcium, cone.iron)"></i> <input type="text" class="itemQty" value="0"> <i class="fa fa-minus-circle" aria-hidden="true" ng-click="removeItem(cone.calories, cone.fatCalories, cone.fatGrams, cone.satFatGrams, cone.transFatGrams, cone.cholesterolMg, cone.sodiumMg, cone.carbTotal, cone.fiberGrams, cone.sugarGrams, cone.proteinGrams,cone.vitaminA, cone.vitaminC, cone.calcium, cone.iron)"></i> </li>
             </ul>
           </div>
         </div>
@@ -131,8 +131,17 @@
         </table>
 
         <p class="small-info">* Percent Daily Values are based on a 2,000 calorie diet. Your daily values may be higher or lower depending on your calorie needs:</p>
-
-        <table class="performance-facts__table--small small-info">
+        <table class="performance-facts__table--footer">
+          <tbody>
+            <tr>
+              <td><i class="fa fa-smile-o" aria-hidden="true"></i></td>
+            </tr>
+            <tr>
+              <td>Happiness: 100% </td>
+            </tr>
+        </tbody>
+      </table>
+        <!-- <table class="performance-facts__table-small small-info">
           <thead>
             <tr>
               <td colspan="2"></td>
@@ -179,14 +188,14 @@
               <td>30g</td>
             </tr>
           </tbody>
-        </table>
+        </table> -->
 
-        <p class="small-info">
+        <!-- <p class="small-info">
           Calories per gram:
         </p>
         <p class="small-info text-center">
           Fat 9 &bull; Carbohydrate 4 &bull; Protein 4
-        </p>
+        </p> -->
 
       </section>
     </div>
