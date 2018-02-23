@@ -1,56 +1,140 @@
 calculator.controller('homeController', ['$scope', function($scope) {
+$scope.addItem= function(item) {
+        $scope.calorieTotal= $scope.calorieTotal + item.calories;
+        $scope.fatCalTotal = $scope.fatCalTotal + item.fatCalories;
+        $scope.totalFatGrams = $scope.totalFatGrams + item.fatGrams;
+        $scope.totalSatFat = $scope.totalSatFat + item.satFatGrams;
+        $scope.totalTransFat = $scope.totalTransFat + item.transFatGrams;
+        $scope.totalCholesterol = $scope.totalCholesterol + item.cholesterolMg;
+        $scope.totalSodium = $scope.totalSodium + item.sodiumMg;
+        $scope.totalCarbs = $scope.totalCarbs + item.carbTotal;
+        $scope.totalFiber = $scope.totalFiber + item.fiberGrams;
+        $scope.totalSugar = $scope.totalSugar + item.sugarGrams;
+        $scope.totalProtein = $scope.totalProtein + item.proteinGrams;
+        $scope.totalFatDV = ($scope.totalFatGrams/65)*100;
+        $scope.totalSatFatDV = ($scope.totalSatFat/20)*100;
+        $scope.totalCholesterolDV = ($scope.totalCholesterol/300)*100;
+        $scope.totalSodiumDV = ($scope.totalSodium/2400)*100;
+        $scope.totalCarbDV = ($scope.totalCarbs/300)*100;
+        $scope.totalDietFiberDV = ($scope.totalFiber/25)*100;
+        $scope.itemNumber= $scope.itemNumber + 1;
+        $scope.totalVitaminA = (item.vitaminA/1000)*100;
+        $scope.totalVitaminC = (item.vitaminC/60)*100;
+        $scope.totalCalcium = (item.calcium/1100)*100;
+        $scope.totalIron = (item.iron/14)*100;
 
-    $scope.addItem= function(itemCalories, itemFatCalories, itemFatGrams, itemSatFat, itemTransFat, itemCholesterol, itemSodium, itemCarbs, itemFiber, itemSugar, itemProtein,itemVitA, itemVitC, itemCalcium, itemIron, qtyNumber) {
-//find calorie value of the flavor seelcted
-      $scope.qtyNumber = $scope.qtyNumber + 1;
-      $scope.calorieTotal= $scope.calorieTotal + itemCalories;
-      $scope.fatCalTotal = $scope.fatCalTotal + itemFatCalories;
-      $scope.totalFatGrams = $scope.totalFatGrams + itemFatGrams;
-      $scope.totalSatFat = $scope.totalSatFat + itemSatFat;
-      $scope.totalTransFat = $scope.totalTransFat + itemTransFat;
-      $scope.totalCholesterol = $scope.totalCholesterol + itemCholesterol;
-      $scope.totalSodium = $scope.totalSodium + itemSodium;
-      $scope.totalCarbs = $scope.totalCarbs + itemCarbs;
-      $scope.totalFiber = $scope.totalFiber + itemFiber;
-      $scope.totalSugar = $scope.totalSugar + itemSugar;
-      $scope.totalProtein = $scope.totalProtein + itemProtein;
+        $scope.addToList(item);
+};
+
+    $scope.removeItem= function(item) {
+      $scope.qtyNumber= $scope.qtyNumber - 1;
+      $scope.calorieTotal= $scope.calorieTotal - item.calories;
+      $scope.fatCalTotal = $scope.fatCalTotal - item.fatCalories;
+      $scope.totalFatGrams = $scope.totalFatGrams - item.fatGrams;
+      $scope.totalSatFat = $scope.totalSatFat - item.satFatGrams;
+      $scope.totalTransFat = $scope.totalTransFat - item.transFatGrams;
+      $scope.totalCholesterol = $scope.totalCholesterol - item.cholesterolMg;
+      $scope.totalSodium = $scope.totalSodium - item.sodiumMg;
+      $scope.totalCarbs = $scope.totalCarbs - item.carbTotal;
+      $scope.totalFiber = $scope.totalFiber - item.fiberGrams;
+      $scope.totalSugar = $scope.totalSugar - item.sugarGrams;
+      $scope.totalProtein = $scope.totalProtein - item.proteinGrams;
       $scope.totalFatDV = ($scope.totalFatGrams/65)*100;
       $scope.totalSatFatDV = ($scope.totalSatFat/20)*100;
       $scope.totalCholesterolDV = ($scope.totalCholesterol/300)*100;
       $scope.totalSodiumDV = ($scope.totalSodium/2400)*100;
       $scope.totalCarbDV = ($scope.totalCarbs/300)*100;
       $scope.totalDietFiberDV = ($scope.totalFiber/25)*100;
-      $scope.itemNumber= $scope.itemNumber+ 1;
-      $scope.totalVitaminA = (itemVitA/1000)*100;
-      $scope.totalVitaminC = (itemVitC/60)*100;
-      $scope.totalCalcium = (itemCalcium/1100)*100;
-      $scope.totalIron = (itemIron/14)*100;
+      $scope.itemNumber= $scope.itemNumber - 1;
+      $scope.totalVitaminA = (item.vitaminA/1000)*100;
+      $scope.totalVitaminC = (item.vitaminC/60)*100;
+      $scope.totalCalcium = (item.calcium/1100)*100;
+      $scope.totalIron = (item.iron/14)*100;
+      $scope.removeFromList(item);
     };
-    $scope.removeItem= function(itemCalories, itemFatCalories, itemFatGrams, itemSatFat, itemTransFat, itemCholesterol, itemSodium, itemCarbs, itemFiber, itemSugar, itemProtein,itemVitA, itemVitC, itemCalcium, itemIron) {
-      $scope.calorieTotal= $scope.calorieTotal - itemCalories;
-      $scope.fatCalTotal = $scope.fatCalTotal - itemFatCalories;
-      $scope.totalFatGrams = $scope.totalFatGrams - itemFatGrams;
-      $scope.totalSatFat = $scope.totalSatFat - itemSatFat;
-      $scope.totalTransFat = $scope.totalTransFat - itemTransFat;
-      $scope.totalCholesterol = $scope.totalCholesterol - itemCholesterol;
-      $scope.totalSodium = $scope.totalSodium - itemSodium;
-      $scope.totalCarbs = $scope.totalCarbs - itemCarbs;
-      $scope.totalFiber = $scope.totalFiber - itemFiber;
-      $scope.totalSugar = $scope.totalSugar - itemSugar;
-      $scope.totalProtein = $scope.totalProtein - itemProtein;
-      $scope.totalFatDV = ($scope.totalFatGrams/65)*100;
-      $scope.totalSatFatDV = ($scope.totalSatFat/20)*100;
-      $scope.totalCholesterolDV = ($scope.totalCholesterol/300)*100;
-      $scope.totalSodiumDV = ($scope.totalSodium/2400)*100;
-      $scope.totalCarbDV = ($scope.totalCarbs/300)*100;
-      $scope.totalDietFiberDV = ($scope.totalFiber/25)*100;
-      $scope.itemNumber= $scope.itemNumber- 1;
-      $scope.totalVitaminA = (itemVitA/1000)*100;
-      $scope.totalVitaminC = (itemVitC/60)*100;
-      $scope.totalCalcium = (itemCalcium/1100)*100;
-      $scope.totalIron = (itemIron/14)*100;
-      $scope.qtyNumber = $scope.qtyNumber + 1;
-    }
+
+/*============================================================================================================================================*/
+  $scope.addToList=function(item){
+      item.quantity = item.quantity + 1;
+    //if item is already on the list, it'll just update that item's quantity
+          for (i = 0; i < $scope.itemObjects.length; i++) {
+              if ($scope.itemObjects[i].name == item.name){
+                $scope.itemObjects[i].quantity= $scope.itemObjects[i].quantity + 1;
+              }
+    //else make a new object
+              // else {
+              //   $scope.newListItem = {
+              //     name:item.name,
+              //     itemQuantity:item.quantity
+              //   }
+              // }
+            };
+
+    // alert(JSON.stringify($scope.newListItem));
+      // $scope.itemObjects.push($scope.newListItem);
+    };
+
+    $scope.removeFromList=function(item){
+      item.quantity = item.quantity - 1;
+      for (i = 0; i < $scope.itemObjects.length; i++) {
+          if ($scope.itemObjects[i].name === item.name){
+            $scope.itemObjects[i].quantity= $scope.itemObjects[i].quantity - 1;
+          }
+      }
+    };
+
+$scope.itemObjects =[
+  {
+    name: "Mint Chocolate Chip",
+    quantity:0
+  },
+  {
+    name:"Strawberry",
+    quantity:0
+  },
+  {
+    name:"Chocolate",
+    quantity:0
+  },
+  {
+    name:"Vanilla",
+    quantity:0
+  },
+  {
+    name:"Whipped Cream",
+    quantity:0
+  },
+  {
+    name:"Hot Fudge",
+    quantity:0
+  },
+  {
+    name:"Nuts",
+    quantity:0
+  },
+  {
+    name:"Sprinkles",
+    quantity:0
+  },
+  {
+    name:"Waffle Cone",
+    quantity:0
+  },
+  {
+    name:"Wafer Cone",
+    quantity:0
+  },
+  {
+    name:"Chocolate Covered Cone",
+    quantity:0
+  },
+  {
+    name:"No Cone",
+    quantity:0
+  }
+];
+
+/*============================================================================================================================================*/
 
 /*NUMBER OF ITEMS ADDED*/
   $scope.itemNumber=0;
@@ -72,7 +156,6 @@ calculator.controller('homeController', ['$scope', function($scope) {
     $scope.totalVitaminC = 0;
     $scope.totalCalcium = 0;
     $scope.totalIron = 0;
-
 
 /*DAILY VALUE PERCENTAGES*/
     $scope.totalFatDV = 0;
@@ -100,7 +183,8 @@ calculator.controller('homeController', ['$scope', function($scope) {
                 vitaminA: 200,
                 vitaminC: 2,
                 calcium:200,
-                iron:2
+                iron:2,
+                quantity:0
               },
               {
                 name:"Strawberry",
@@ -118,7 +202,8 @@ calculator.controller('homeController', ['$scope', function($scope) {
                 vitaminA: 300,
                 vitaminC: 3,
                 calcium:300,
-                iron:3
+                iron:3,
+                quantity:0
               },
               {
                 name:"Chocolate",
@@ -136,7 +221,8 @@ calculator.controller('homeController', ['$scope', function($scope) {
                 vitaminA: 400,
                 vitaminC: 4,
                 calcium:400,
-                iron:4
+                iron:4,
+                quantity:0
               },
               {
                 name:"Vanilla",
@@ -154,7 +240,8 @@ calculator.controller('homeController', ['$scope', function($scope) {
                 vitaminA: 500,
                 vitaminC: 5,
                 calcium:500,
-                iron:5
+                iron:5,
+                quantity:0
               }
           ];
 
@@ -175,7 +262,8 @@ calculator.controller('homeController', ['$scope', function($scope) {
               vitaminA: 200,
               vitaminC: 2,
               calcium:200,
-              iron:2
+              iron:2,
+              quantity:0
             },
             {
               name:"Hot Fudge",
@@ -193,7 +281,8 @@ calculator.controller('homeController', ['$scope', function($scope) {
               vitaminA: 300,
               vitaminC: 3,
               calcium:300,
-              iron:3
+              iron:3,
+              quantity:0
             },
             {
               name:"Nuts",
@@ -211,7 +300,8 @@ calculator.controller('homeController', ['$scope', function($scope) {
               vitaminA: 400,
               vitaminC: 4,
               calcium:400,
-              iron:4
+              iron:4,
+              quantity:0
             },
             {
               name:"Sprinkles",
@@ -229,7 +319,8 @@ calculator.controller('homeController', ['$scope', function($scope) {
               vitaminA: 500,
               vitaminC: 5,
               calcium:500,
-              iron:5
+              iron:5,
+              quantity:0
             }
           ];
 
@@ -250,7 +341,8 @@ calculator.controller('homeController', ['$scope', function($scope) {
               vitaminA: 200,
               vitaminC: 2,
               calcium:200,
-              iron:2
+              iron:2,
+              quantity:0
             },
             {
               name:"Wafer Cone",
@@ -268,7 +360,8 @@ calculator.controller('homeController', ['$scope', function($scope) {
               vitaminA: 300,
               vitaminC: 3,
               calcium:300,
-              iron:3
+              iron:3,
+              quantity:0
             },
             {
               name:"Chocolate Covered Cone",
@@ -286,7 +379,8 @@ calculator.controller('homeController', ['$scope', function($scope) {
               vitaminA: 400,
               vitaminC: 4,
               calcium:400,
-              iron:4
+              iron:4,
+              quantity:0
             },
             {
               name:"No Cone",
@@ -304,7 +398,8 @@ calculator.controller('homeController', ['$scope', function($scope) {
               vitaminA: 500,
               vitaminC: 5,
               calcium:500,
-              iron:5
+              iron:5,
+              quantity:0
             }
           ];
 }]);

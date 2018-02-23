@@ -11,7 +11,7 @@
           <!-- <div id="flavors" class="panel-collapse collapse"> -->
           <div id="flavors">
             <ul class="list-group">
-              <li class="list-group-item" ng-repeat="flavor in flavors"> {{flavor.name}} <i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(flavor.calories, flavor.fatCalories, flavor.fatGrams, flavor.satFatGrams, flavor.transFatGrams, flavor.cholesterolMg, flavor.sodiumMg, flavor.carbTotal, flavor.fiberGrams, flavor.sugarGrams, flavor.proteinGrams,flavor.vitaminA, flavor.vitaminC, flavor.calcium, flavor.iron)"></i></span> <input type="text" class="itemQty" value="0"> <i class="fa fa-minus-circle" aria-hidden="true" ng-click="removeItem(flavor.calories, flavor.fatCalories, flavor.fatGrams, flavor.satFatGrams, flavor.transFatGrams, flavor.cholesterolMg, flavor.sodiumMg, flavor.carbTotal, flavor.fiberGrams, flavor.sugarGrams, flavor.proteinGrams,flavor.vitaminA, flavor.vitaminC, flavor.calcium, flavor.iron)"></i></li>
+              <li class="list-group-item" ng-repeat="flavor in flavors"> {{flavor.name}} <i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(flavor)"></i></span> <input type="text" class="itemQty" value="{{flavor.quantity}} "> <i class="fa fa-minus-circle" aria-hidden="true" ng-click="removeItem(flavor)"></i></li>
             </ul>
           </div>
         </div>
@@ -26,7 +26,7 @@
           </div>
           <div id="toppings">
             <ul class="list-group">
-              <li class="list-group-item" ng-repeat="topping in toppings"> {{topping.name}} <i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(topping.calories, topping.fatCalories, topping.fatGrams, topping.satFatGrams, topping.transFatGrams, topping.cholesterolMg, topping.sodiumMg, topping.carbTotal, topping.fiberGrams, topping.sugarGrams, topping.proteinGrams,topping.vitaminA, topping.vitaminC, topping.calcium, topping.iron)"> </i> <input type="text" class="itemQty" value="0">  <i class="fa fa-minus-circle" aria-hidden="true" ng-click="removeItem(topping.calories, topping.fatCalories, topping.fatGrams, topping.satFatGrams, topping.transFatGrams, topping.cholesterolMg, topping.sodiumMg, topping.carbTotal, topping.fiberGrams, topping.sugarGrams, topping.proteinGrams,topping.vitaminA, topping.vitaminC, topping.calcium, topping.iron)"> </i></li>
+              <li class="list-group-item" ng-repeat="topping in toppings"> {{topping.name}} <i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(topping)"> </i> <input type="text" class="itemQty" value="{{topping.quantity}} ">  <i class="fa fa-minus-circle" aria-hidden="true" ng-click="removeItem(topping)"> </i></li>
             </ul>
           </div>
         </div>
@@ -42,10 +42,14 @@
           <div id="cone" >
             <ul class="list-group">
               <!-- different sizes -->
-              <li class="list-group-item" ng-repeat="cone in cones"> {{cone.name}} <i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(cone.calories, cone.fatCalories, cone.fatGrams, cone.satFatGrams, cone.transFatGrams, cone.cholesterolMg, cone.sodiumMg, cone.carbTotal, cone.fiberGrams, cone.sugarGrams, cone.proteinGrams,cone.vitaminA, cone.vitaminC, cone.calcium, cone.iron)"></i> <input type="text" class="itemQty" value="0"> <i class="fa fa-minus-circle" aria-hidden="true" ng-click="removeItem(cone.calories, cone.fatCalories, cone.fatGrams, cone.satFatGrams, cone.transFatGrams, cone.cholesterolMg, cone.sodiumMg, cone.carbTotal, cone.fiberGrams, cone.sugarGrams, cone.proteinGrams,cone.vitaminA, cone.vitaminC, cone.calcium, cone.iron)"></i> </li>
+              <li class="list-group-item" ng-repeat="cone in cones"> {{cone.name}} <i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(cone)"></i> <input type="text" class="itemQty" value="{{cone.quantity}} "> <i class="fa fa-minus-circle" aria-hidden="true" ng-click="removeItem(cone)"></i> </li>
             </ul>
           </div>
         </div>
+      </div>
+      <div class="itemList">
+          <p>You ordered:</p>
+          <p ng-repeat="item in itemObjects" ng-hide="item.quantity == 0">{{item.quantity}} {{item.name}}</p>
       </div>
     </div>
 
