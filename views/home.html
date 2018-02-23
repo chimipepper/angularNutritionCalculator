@@ -11,7 +11,7 @@
           <!-- <div id="flavors" class="panel-collapse collapse"> -->
           <div id="flavors">
             <ul class="list-group">
-              <li class="list-group-item" ng-repeat="flavor in flavors"> {{flavor.name}} <i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(flavor)"></i></span> <input type="text" class="itemQty" value="{{flavor.quantity}} "> <i class="fa fa-minus-circle" aria-hidden="true" ng-click="removeItem(flavor)"></i></li>
+              <li class="list-group-item" ng-repeat="flavor in flavors"> {{flavor.name}} <i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(flavor)"></i></span> <input type="text" class="itemQty" value="{{flavor.quantity}}"> <i class="fa fa-minus-circle" aria-hidden="true" ng-hide="flavor.quantity == 0" ng-click="removeItem(flavor)"></i></li>
             </ul>
           </div>
         </div>
@@ -26,7 +26,7 @@
           </div>
           <div id="toppings">
             <ul class="list-group">
-              <li class="list-group-item" ng-repeat="topping in toppings"> {{topping.name}} <i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(topping)"> </i> <input type="text" class="itemQty" value="{{topping.quantity}} ">  <i class="fa fa-minus-circle" aria-hidden="true" ng-click="removeItem(topping)"> </i></li>
+              <li class="list-group-item" ng-repeat="topping in toppings"> {{topping.name}} <i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(topping)"> </i> <input type="text" class="itemQty" value="{{topping.quantity}} ">  <i class="fa fa-minus-circle" aria-hidden="true" ng-hide="topping.quantity == 0" ng-click="removeItem(topping)" ng-disabled="topping.quantity == 0"> </i></li>
             </ul>
           </div>
         </div>
@@ -42,7 +42,7 @@
           <div id="cone" >
             <ul class="list-group">
               <!-- different sizes -->
-              <li class="list-group-item" ng-repeat="cone in cones"> {{cone.name}} <i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(cone)"></i> <input type="text" class="itemQty" value="{{cone.quantity}} "> <i class="fa fa-minus-circle" aria-hidden="true" ng-click="removeItem(cone)"></i> </li>
+              <li class="list-group-item" ng-repeat="cone in cones"> {{cone.name}} <i class="fa fa-plus-circle" aria-hidden="true" ng-click="addItem(cone)"></i> <input type="text" class="itemQty" value="{{cone.quantity}} "> <i class="fa fa-minus-circle" aria-hidden="true" ng-hide="cone.quantity == 0" ng-click="removeItem(cone)" ng-disabled="cone.quantity == 0"></i> </li>
             </ul>
           </div>
         </div>

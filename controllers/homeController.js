@@ -1,5 +1,6 @@
 calculator.controller('homeController', ['$scope', function($scope) {
 $scope.addItem= function(item) {
+
         $scope.calorieTotal= $scope.calorieTotal + item.calories;
         $scope.fatCalTotal = $scope.fatCalTotal + item.fatCalories;
         $scope.totalFatGrams = $scope.totalFatGrams + item.fatGrams;
@@ -51,6 +52,7 @@ $scope.addItem= function(item) {
       $scope.totalCalcium = (item.calcium/1100)*100;
       $scope.totalIron = (item.iron/14)*100;
       $scope.removeFromList(item);
+
     };
 
 /*============================================================================================================================================*/
@@ -61,24 +63,20 @@ $scope.addItem= function(item) {
               if ($scope.itemObjects[i].name == item.name){
                 $scope.itemObjects[i].quantity= $scope.itemObjects[i].quantity + 1;
               }
-    //else make a new object
-              // else {
-              //   $scope.newListItem = {
-              //     name:item.name,
-              //     itemQuantity:item.quantity
-              //   }
-              // }
             };
-
-    // alert(JSON.stringify($scope.newListItem));
-      // $scope.itemObjects.push($scope.newListItem);
     };
 
     $scope.removeFromList=function(item){
-      item.quantity = item.quantity - 1;
       for (i = 0; i < $scope.itemObjects.length; i++) {
           if ($scope.itemObjects[i].name === item.name){
             $scope.itemObjects[i].quantity= $scope.itemObjects[i].quantity - 1;
+            if ($scope.itemObjects[i].quantity < 0){
+              alert("Can't subtract!");
+              break;
+            }
+            else {
+              item.quantity = item.quantity - 1;
+            }
           }
       }
     };
