@@ -48,7 +48,7 @@
         </div>
       </div>
       <div class="itemList">
-          <p>You ordered:</p>
+          <h1>Your order</h1>
           <p ng-repeat="item in itemObjects" ng-hide="item.quantity == 0">{{item.quantity}} {{item.name}}</p>
       </div>
     </div>
@@ -143,6 +143,12 @@
             <tr>
               <td>Happiness: 100% </td>
             </tr>
+            <!-- <tr id ="socialMedia">
+              <td><i class="fa fa-facebook-official" aria-hidden="true"></i></td>
+              <td><i class="fa fa-yelp" aria-hidden="true"></i></td>
+              <td><i class="fa fa-instagram" aria-hidden="true"></i></td>
+              <td><i class="fa fa-twitter" aria-hidden="true"></i></td>
+            </tr> -->
         </tbody>
       </table>
         <!-- <table class="performance-facts__table-small small-info">
@@ -200,7 +206,6 @@
         <p class="small-info text-center">
           Fat 9 &bull; Carbohydrate 4 &bull; Protein 4
         </p> -->
-
       </section>
     </div>
   </div>

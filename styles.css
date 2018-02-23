@@ -24,12 +24,9 @@
   background-color: lightblue;
 }
 
-/* #itemOptions {
-  border-style: solid;
-  border-color: green;
-} */
 #itemOptions {
   margin-top:20px;
+  margin-bottom:20px;
 }
 #itemOptions i, input {
   float:right;
@@ -38,6 +35,9 @@
 #itemOptions i:hover {
   color:pink;
   cursor: pointer;
+}
+#itemOptions .panel-group{
+  box-shadow:2px 7px 8px #4E4A4A;
 }
 #itemOptions .panel-heading {
   background-color:lightgray;
@@ -51,16 +51,38 @@
   /* font-weight:bold; */
   font-size: 1.8em;
 }
-/* #itemOptions .panel-heading:hover {
-  cursor: pointer;
-  -moz-box-shadow:    inset 0 0 20px pink;
-  -webkit-box-shadow: inset 0 0 20px pink;
-  box-shadow:         inset 0 0 20px pink;
-} */
 
 #itemOptions .itemQty {
   width:30px;
   text-align:center;
+}
+#itemOptions .itemList {
+  background-color: #CDE7F0;
+  box-shadow:2px 7px 8px #4E4A4A;
+  margin:auto;
+  width:60%;
+  border-style: solid;
+  border-color:white;
+  padding:10px;
+  text-align:center;
+}
+/* #itemOptions .itemList:hover {
+  box-shadow:5px 7px #4E4A4A;
+} */
+#itemOptions .itemList h1{
+  background-color:pink;
+  font-family: 'Raleway', sans-serif;
+  font-size:20px;
+  font-weight:bold;
+}
+#itemOptions p {
+  padding:5px;
+  margin:auto;
+  width:70%;
+  color:darkbrown;
+  border-style:solid;
+  border-color: white;
+  margin-bottom:3px;
 }
 
 /*========================================NUTRITION FACT SHEET=========================================================*/
@@ -72,10 +94,10 @@
   margin: 0;
 }
 
-
 /*Entire nutrition fact div*/
 .performance-facts {
-  box-shadow:5px 7px black;
+background-color: #CDE7F0;
+ box-shadow:2px 7px 8px #4E4A4A;
   border: 3px solid white;
   margin: 20px;
   float: left;
@@ -85,7 +107,9 @@
     border-collapse: collapse;
   }
 }
-
+/* .performance-facts:hover {
+  box-shadow:2px 7px #4E4A4A;
+} */
 .performance-facts__title {
   font-weight: bold;
   font-size: 2rem;
@@ -226,15 +250,21 @@
   width:100%;
   text-align:center;
 }
+/* .performance-facts__table--footer #socialMedia i{
+  border-style:solid;
+  font-size:10px;
+} */
 .performance-facts__table--footer td i{
   /* background-color: pink; */
+  padding-top:10px;
+  padding-bottom: 0px;
   width:100%;
   font-size:50px;
-  text-align:center;
 }
 .performance-facts__table--footer td {
   text-align:center;
   border-style: none;
+  padding-bottom:10px;
 }
 
 
