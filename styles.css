@@ -1,3 +1,8 @@
+html, body {
+  margin:0px;
+  padding:0px;
+}
+
 #header {
   text-align: center;
   font-size:35px;
@@ -13,6 +18,7 @@
   text-shadow: 2px 2px white;
   line-height: 0.2;
 }
+
 #header h2 {
   font-size:20px;
   font-family: 'Raleway', sans-serif;
@@ -21,13 +27,26 @@
 
 #home {
   width: 100%;
+  height:100%;
   background-color: lightblue;
 }
 
 #itemOptions {
+  padding-left:130px;
   margin-top:20px;
   margin-bottom:20px;
 }
+
+@media (max-width: 867px) { 
+  #itemOptions {
+    width:100%;
+    padding-left:10px;
+}
+html {
+    background-color: lightblue;
+}
+}
+
 #itemOptions i, input {
   float:right;
   margin:10px;
@@ -37,6 +56,7 @@
   cursor: pointer;
 }
 #itemOptions .panel-group{
+  /*padding-left:100px;*/
   box-shadow:2px 7px 8px #4E4A4A;
 }
 #itemOptions .panel-heading {
@@ -48,7 +68,6 @@
   box-shadow:         inset 0 0 3px #000000;
 }
 #itemOptions .panel-title {
-  /* font-weight:bold; */
   font-size: 1.8em;
 }
 
@@ -88,10 +107,9 @@
 /*========================================NUTRITION FACT SHEET=========================================================*/
 
 #factSheet {
-  /* border-style: solid;
-  border-color: red; */
   line-height: 1.4;
   margin: 0;
+  background-color: lightblue;
 }
 
 /*Entire nutrition fact div*/
@@ -101,15 +119,22 @@ background-color: #CDE7F0;
   border: 3px solid white;
   margin: 20px;
   float: left;
-  width: 280px;
-  padding: 0.5rem;
-  table {
-    border-collapse: collapse;
+  width: 300px;
+  padding: 0.8rem;
+}
+
+@media (max-width: 867px) { 
+  #factsheet {
+    width:100%;
+    background-color: lightblue;
+  }
+  .performance-facts {
+    width:90%;
   }
 }
-/* .performance-facts:hover {
-  box-shadow:2px 7px #4E4A4A;
-} */
+
+
+
 .performance-facts__title {
   font-weight: bold;
   font-size: 2rem;
@@ -250,12 +275,28 @@ background-color: #CDE7F0;
   width:100%;
   text-align:center;
 }
-/* .performance-facts__table--footer #socialMedia i{
-  border-style:solid;
-  font-size:10px;
-} */
+
+#socialMedia {
+background-color: #CDE7F0;
+  padding:2px;
+  text-align:center;
+}
+
+#socialMedia i{
+  text-shadow: 2px 2px white;
+  color:#776A6A;
+    font-weight:bold;
+    margin-top:10px;
+  padding:5px;
+  font-size:25px;
+} 
+#socialMedia i:hover {
+  cursor: pointer;
+  color:white;
+    text-shadow: 1px 0px 10px black;
+}
+
 .performance-facts__table--footer td i{
-  /* background-color: pink; */
   padding-top:10px;
   padding-bottom: 0px;
   width:100%;

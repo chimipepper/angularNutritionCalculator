@@ -47,10 +47,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="itemList">
-          <h1>Your order</h1>
-          <p ng-repeat="item in itemObjects" ng-hide="item.quantity == 0">{{item.quantity}} {{item.name}}</p>
-      </div> -->
     </div>
 
     <div id="factSheet" class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -121,7 +117,7 @@
           <tbody>
             <tr>
               <td colspan="2">Vitamin A {{totalNutrition.totalVitaminA|number:0}}%</td>
-              <td>Vitamin C {{totalVitaminC|number:0}}%</td>
+              <td>Vitamin C {{totalNutrition.totalVitaminC|number:0}}%</td>
             </tr>
             <tr class="thin-end">
               <td colspan="2">Calcium {{totalNutrition.totalCalcium|number:0}}%</td>
@@ -139,15 +135,17 @@
             <tr>
               <td>Happiness: 100% </td>
             </tr>
-            <!-- <tr id ="socialMedia">
-              <td><i class="fa fa-facebook-official" aria-hidden="true"></i></td>
-              <td><i class="fa fa-yelp" aria-hidden="true"></i></td>
-              <td><i class="fa fa-instagram" aria-hidden="true"></i></td>
-              <td><i class="fa fa-twitter" aria-hidden="true"></i></td>
-            </tr> -->
         </tbody>
       </table>
+            <div id ="socialMedia">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <i class="fa fa-yelp" aria-hidden="true"></i>
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+      </div>
       </section>
     </div>
+    
+
   </div>
 </div>

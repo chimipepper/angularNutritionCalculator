@@ -13,10 +13,10 @@ calculator.service('itemsService', function() {
     totalNutrition.totalSugar = totalNutrition.totalSugar + item.sugarGrams;
     totalNutrition.totalProtein = totalNutrition.totalProtein + item.proteinGrams;
 
-    totalNutrition.totalVitaminA = (item.vitaminA / 1000) * 100;
-    totalNutrition.totalVitaminC = (item.vitaminC / 60) * 100;
-    totalNutrition.totalCalcium = (item.calcium / 1100) * 100;
-    totalNutrition.totalIron = (item.iron / 14) * 100;
+    totalNutrition.totalVitaminA = totalNutrition.totalVitaminA + (item.vitaminA / 1000) * 100;
+    totalNutrition.totalVitaminC = totalNutrition.totalVitaminC + (item.vitaminC / 60) * 100;
+    totalNutrition.totalCalcium = totalNutrition.totalCalcium + (item.calcium / 1100) * 100;
+    totalNutrition.totalIron = totalNutrition.totalIron + (item.iron / 14) * 100;
     return totalNutrition;
   };
 
@@ -33,10 +33,10 @@ calculator.service('itemsService', function() {
     totalNutrition.totalSugar = totalNutrition.totalSugar - item.sugarGrams;
     totalNutrition.totalProtein = totalNutrition.totalProtein - item.proteinGrams;
 
-    totalNutrition.totalVitaminA = (item.vitaminA / 1000) * 100;
-    totalNutrition.totalVitaminC = (item.vitaminC / 60) * 100;
-    totalNutrition.totalCalcium = (item.calcium / 1100) * 100;
-    totalNutrition.totalIron = (item.iron / 14) * 100;
+    totalNutrition.totalVitaminA = totalNutrition.totalVitaminA - (item.vitaminA / 1000) * 100;
+    totalNutrition.totalVitaminC = totalNutrition.totalVitaminC - (item.vitaminC / 60) * 100;
+    totalNutrition.totalCalcium = totalNutrition.totalCalcium - (item.calcium / 1100) * 100;
+    totalNutrition.totalIron = totalNutrition.totalIron - (item.iron / 14) * 100;
     return totalNutrition;
   };
 
